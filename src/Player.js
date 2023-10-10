@@ -5,8 +5,12 @@ export default class Player {
         this.height = 64;
         this.x = 50;
         this.y = 100;
+        this.speedX = 1
+      this.speedY = 0
       }
-      update(deltaTime) {}
+      update(deltaTime) {
+        this.x += this.speedX
+      }
       draw(context) {
         context.fillStyle = '#f00';
         context.fillRect(this.x, this.y, this.width, this.height);
