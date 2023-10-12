@@ -10,6 +10,7 @@ export default class Game {
     this.keys = []
     this.enemies = []
     this.gameOver = false
+    this.gameTime = 0
     this.gravity = 1
     this.debug = false
     this.player = new Player(this)
