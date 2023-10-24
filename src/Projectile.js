@@ -6,14 +6,19 @@ export default class Projectile {
         this.x = x
         this.y = y
     
-        this.speed = 5
+        this.speedX = 3
+        this.speedY = Math.random() * 5 - Math.random() * 5
         this.damage = 1
         this.markedForDeletion = false
     }
     update() {
-        this.x += this.speed
+        this.x += this.speedX
         if (this.x > this.game.width) {
           this.markedForDeletion = true
+        }
+        this.y += this.speedY
+        if (this.y > this.game.width) {
+            this.markedForDeletion = true
         }
     }
     draw(context) {
