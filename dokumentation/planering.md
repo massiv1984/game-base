@@ -18,7 +18,7 @@ häxa (spelare): rör sig åt höger och vänster, kan hoppa och skjuta projekti
 fiendesorter:
 kråka: flyger runt, gör skada om man rör vid den, tar inte så många projektiler innan den dör
 sköldpadda: går runt långsamt på marken, gör skada om man rör vid den, tar många projektiler innan den dör
-krokodil: större än sköldpaddorna och går snabbare på marken, gör skada om man rör vid den, tar någorlunda många projektiler innan den dör
+alligator: större än sköldpaddorna och går snabbare på marken, gör skada om man rör vid den, tar någorlunda många projektiler innan den dör
 du får poäng för varje fiende du dödar (500?)
 katter fungerar typ som fiender men du kan inte skjuta dem och ska istället plocka upp dem, de ger dig också bonuspoäng (2000?)
 däremot är katterna ovanligare än fienderna

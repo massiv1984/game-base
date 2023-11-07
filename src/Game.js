@@ -3,6 +3,7 @@ import Player from './Player.js'
 import InputHandler from './InputHandler.js'
 import UserInterface from './UserInterface.js'
 import Platform from './Platform.js'
+import Camera from './Camera.js'
 export default class Game {
   constructor(width, height) {
     this.width = width
@@ -16,6 +17,7 @@ export default class Game {
     this.gravity = 1
     this.debug = false
     this.player = new Player(this)
+    this.camera = new Camera(this, this.player.x, this.player.y, 0, 100)
     this.enemies = []
     this.enemyTimer = 0
     this.enemyInterval = 0.000000000001
@@ -70,10 +72,12 @@ export default class Game {
   }
 
   draw(context) {
-    this.player.draw(context)
-    this.platforms.forEach((platform) => platform.draw(context))
     this.ui.draw(context)
-    this.enemies.forEach((enemy) => enemy.draw(context))
+    this.player.draw(context, this.camera.x, this.camera.y)
+    this.platforms.forEach((platform) => platform.draw(context, this.camera.x, this.camera.y))
+    this.camera.apply(context)
+    this.enemies.forEach((enemy) => enemy.draw(context, this.camera.x, this.camera.y))
+    this.camera.reset(context)
   }
 
   addEnemy() {
