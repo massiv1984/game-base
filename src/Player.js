@@ -14,6 +14,10 @@ export default class Player {
     this.grounded = false
     this.projectiles = []
     this.frameX = 0
+
+    const image = new Image()
+    image.src = "./src/images/karaktären.png"
+    this.image = image
   }
   update(deltaTime) {
     //if (this.game.keys.includes('ArrowUp')) {
@@ -49,8 +53,9 @@ export default class Player {
     )
   }
   draw(context) {
-    context.fillStyle = '#f00';
-    context.fillRect(this.x, this.y, this.width, this.height);
+    // context.fillStyle = '#f00';
+    // context.fillRect(this.x, this.y, this.width, this.height);
+    context.drawImage(this.image, this.x, this.y, this.width, this.height)
     this.projectiles.forEach((projectile) => {
       projectile.draw(context)
     })
