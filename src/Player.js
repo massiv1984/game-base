@@ -16,7 +16,7 @@ export default class Player {
     this.frameX = 0
 
     const image = new Image()
-    image.src = "./src/images/karaktären.png"
+    image.src = "./src/images/karaktaren.png"
     this.image = image
   }
   update(deltaTime) {
