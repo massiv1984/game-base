@@ -3,20 +3,20 @@ import Projectile from './Projectile.js'
 export default class Player {
   constructor(game) {
     this.game = game;
-    this.width = 50;
-    this.height = 50;
+    this.width = 32;
+    this.height = 32;
     this.x = 50;
     this.y = 100;
     this.speedX = 1
     this.speedY = 0
-    this.maxSpeed = 20
-    this.jumpSpeed = 20
+    this.maxSpeed = 12
+    this.jumpSpeed = 19
     this.grounded = false
     this.projectiles = []
     this.frameX = 0
 
     const image = new Image()
-    image.src = "./images/karaktaren.png"
+    image.src = "src/images/karaktaren.png"
     this.image = image
   }
   update(deltaTime) {
