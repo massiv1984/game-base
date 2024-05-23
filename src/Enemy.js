@@ -9,11 +9,11 @@ export default class Enemy {
       this.grounded = false
     }
     update() {
-        if (this.grounded) {
-            this.speedY = 0
-        } else {
-            this.speedY += this.game.gravity
-        }
+        //if (this.grounded) {
+        //    this.speedY = 0
+        //} else {
+        //    this.speedY += this.game.gravity
+        //}
         this.y += this.speedY      
         this.x += this.speedX
         if (this.x < 0) this.markedForDeletion = true
