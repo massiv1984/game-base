@@ -1,5 +1,6 @@
 import Slime from './Slime.js'
 import Creature from './Creature.js'
+import Cat from './Cat.js'
 import Player from './Player.js'
 import InputHandler from './InputHandler.js'
 import UserInterface from './UserInterface.js'
@@ -21,6 +22,8 @@ export default class Game {
     this.enemyInterval = 0.000000000001
     this.enemyTimer2 = 0
     this.enemyInterval2 = 4200
+    this.enemyTimer3 = 0
+    this.enemyInterval3 = 42000
     // this.ground = this.height - 100
 //    this.platforms = [
 //      new Platform(this, 0, this.ground, this.width, 100),
@@ -63,6 +66,12 @@ export default class Game {
     } else {
       this.enemyTimer2 += deltaTime
     }
+    if (this.enemyTimer3 > this.enemyInterval3 && !this.gameOver) {
+      this.addEnemy3()
+      this.enemyTimer3 = 0
+    } else {
+      this.enemyTimer3 += deltaTime
+    }
 
     this.enemies.forEach((enemy) => {
       enemy.update(deltaTime)
@@ -92,6 +101,10 @@ export default class Game {
 
   addEnemy2() {
     this.enemies.push(new Creature(this))
+  }
+
+  addEnemy3() {
+    this.enemies.push(new Cat(this))
   }
 
   checkCollision(object1, object2) {

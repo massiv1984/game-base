@@ -22,7 +22,8 @@ export default class Projectile {
         }
     }
     draw(context) {
-        context.fillStyle = '#ff0'
+        //context.fillStyle = '#ff0'
+        context.fillStyle = 'pink'
         context.fillRect(this.x, this.y, this.width, this.height)
     }
 }
