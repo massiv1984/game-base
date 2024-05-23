@@ -1,4 +1,5 @@
 import Slime from './Slime.js'
+import Creature from './Creature.js'
 import Player from './Player.js'
 import InputHandler from './InputHandler.js'
 import UserInterface from './UserInterface.js'
@@ -79,6 +80,7 @@ export default class Game {
 
   addEnemy() {
     this.enemies.push(new Slime(this))
+    this.enemies.push(new Creature(this))
   }
 
   checkCollision(object1, object2) {
