@@ -4,6 +4,7 @@ import Cat from './Cat.js'
 import Player from './Player.js'
 import InputHandler from './InputHandler.js'
 import UserInterface from './UserInterface.js'
+import Background from './Background.js'
 // import Platform from './Platform.js'
 export default class Game {
   constructor(width, height) {
@@ -11,6 +12,7 @@ export default class Game {
     this.height = height
     this.input = new InputHandler(this)
     this.ui = new UserInterface(this)
+    this.background = new Background(this)
     this.keys = []
     this.gameOver = false
     this.gameTime = 0
@@ -30,12 +32,16 @@ export default class Game {
 //      new Platform(this, this.width - 200, 280, 200, 20),
 //      new Platform(this, 200, 200, 300, 20),
 //    ]
+    this.speed = 1
   }
 
   update(deltaTime) {
     if (!this.gameOver) {
       this.gameTime += deltaTime
     }
+    this.background.update()
+    // this.background.layers[3].update()
+
     this.player.update(deltaTime)
 
     // this.platforms.forEach((platform) => {
@@ -89,6 +95,7 @@ export default class Game {
   }
 
   draw(context) {
+    this.background.draw(context)
     this.ui.draw(context)
     this.player.draw(context)
     // this.platforms.forEach((platform) => platform.draw(context))
