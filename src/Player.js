@@ -45,6 +45,15 @@ export default class Player {
     if (this.x <= -20) {
       this.x = this.x + 10
     }
+    if (this.x >= 840) {
+      this.x = this.x -10
+    }
+    if (this.y <= -20) {
+      this.y = this.y + 10
+    }
+    if (this.y >= 460) {
+      this.y = this.y - 10
+    }
     
     this.x += this.speedX;
     this.y += this.speedY;
