@@ -7,7 +7,7 @@ export default class Creature extends Enemy {
       this.height = 128
       this.x = this.game.width
       this.y = Math.random() * (this.game.height - this.height)
-      this.speedX = Math.random() * -3 - 1.5
+      this.speedX = Math.random() * -4 - 7
       this.lives = 2
       const image = new Image()
       image.src = "src/images/katter.png"

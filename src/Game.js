@@ -19,7 +19,9 @@ export default class Game {
     this.enemies = []
     this.enemyTimer = 0
     this.enemyInterval = 0.000000000001
-    this.ground = this.height - 100
+    this.enemyTimer2 = 0
+    this.enemyInterval2 = 4200
+    // this.ground = this.height - 100
 //    this.platforms = [
 //      new Platform(this, 0, this.ground, this.width, 100),
 //      new Platform(this, this.width - 200, 280, 200, 20),
@@ -55,6 +57,12 @@ export default class Game {
     } else {
       this.enemyTimer += deltaTime
     }
+    if (this.enemyTimer2 > this.enemyInterval2 && !this.gameOver) {
+      this.addEnemy2()
+      this.enemyTimer2 = 0
+    } else {
+      this.enemyTimer2 += deltaTime
+    }
 
     this.enemies.forEach((enemy) => {
       enemy.update(deltaTime)
@@ -80,6 +88,9 @@ export default class Game {
 
   addEnemy() {
     this.enemies.push(new Slime(this))
+  }
+
+  addEnemy2() {
     this.enemies.push(new Creature(this))
   }
 
