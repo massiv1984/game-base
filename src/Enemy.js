@@ -8,7 +8,7 @@ export default class Enemy {
       this.markedForDeletion = false
       this.grounded = false
     }
-    update() {
+    update(deltaTime) {
         //if (this.grounded) {
         //    this.speedY = 0
         //} else {
@@ -17,6 +17,18 @@ export default class Enemy {
         this.y += this.speedY      
         this.x += this.speedX
         if (this.x < 0) this.markedForDeletion = true
+                // sprite animation update
+if (this.timer > this.interval) {
+    this.frameX++
+    this.timer = 0
+  } else {
+    this.timer += deltaTime
+  }
+
+  // reset frameX when it reaches maxFrame
+  if (this.frameX >= this.maxFrame) {
+    this.frameX = 0
+  }
     }
     
 }
