@@ -1,13 +1,13 @@
 export default class Projectile {
     constructor(game, x, y) {
         this.game = game
-        this.width = 400
-        this.height = 400
+        this.width = 60
+        this.height = 60
         this.x = x
         this.y = y
     
-        this.speedX = Math.random() * 100 - Math.random() * 100
-        this.speedY = Math.random() * 100 - Math.random() * 100
+        this.speedX = 10
+        this.speedY = Math.random() * 6 - Math.random() * 6
         this.damage = 1
         this.markedForDeletion = false
     }
