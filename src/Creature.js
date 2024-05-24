@@ -24,7 +24,7 @@ export default class Creature extends Enemy {
       this.flip = false
       this.hp = 3
       this.damage = 1
-      this.score = 100
+      this.score = 300
     }
 
 

@@ -7,7 +7,7 @@ export default class Projectile {
         this.y = y
     
         this.speedX = 10
-        this.speedY = Math.random() * 6 - Math.random() * 6
+        this.speedY = Math.random() * 1 - Math.random() * 1
         this.damage = 1
         this.markedForDeletion = false
     }

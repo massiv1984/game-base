@@ -38,7 +38,7 @@ export default class Game {
   }
 
   update(deltaTime) {
-    this.countdown = 180 - this.gameTime * 0.001
+    this.countdown = 150 - this.gameTime * 0.001
     if (!this.gameOver) {
       this.gameTime += deltaTime
     }
@@ -98,11 +98,12 @@ export default class Game {
       this.player.projectiles.forEach((projectile) => {
         if (this.checkCollision(projectile, enemy)) {
           enemy.hp -= 1
-          if (enemy.hp <= 0) {
+        if (enemy.hp <= 0) {
           enemy.markedForDeletion = true
           this.score += enemy.score
-          }
+        } else {
           projectile.markedForDeletion = true
+        }
         }
         
       })

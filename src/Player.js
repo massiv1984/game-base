@@ -3,8 +3,8 @@ import Projectile from './Projectile.js'
 export default class Player {
   constructor(game) {
     this.game = game;
-    this.width = 32;
-    this.height = 32;
+    this.width = 64;
+    this.height = 64;
     this.x = 50;
     this.y = 100;
     this.speedX = 1
