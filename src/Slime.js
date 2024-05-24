@@ -9,6 +9,9 @@ export default class Slime extends Enemy {
       this.y = Math.random() * (this.game.height - this.height)
       this.speedX = Math.random() * -1 - 0.5
       this.lives = 2
+      this.hp = 1
+      this.damage = 0
+      this.score = 1
     }
     draw(context) {
       // context.fillStyle = '#0f0'

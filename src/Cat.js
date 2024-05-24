@@ -12,6 +12,9 @@ export default class Cat extends Enemy {
       const image = new Image()
       image.src = "src/images/bigcat.png"
       this.image = image
+      this.hp = 20
+      this.damage = 3
+      this.score = 300
     }
 
 

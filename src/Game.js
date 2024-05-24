@@ -16,6 +16,7 @@ export default class Game {
     this.keys = []
     this.gameOver = false
     this.gameTime = 0
+    this.score = 0
     this.gravity = 1
     this.debug = false
     this.player = new Player(this)
@@ -83,12 +84,19 @@ export default class Game {
       enemy.update(deltaTime)
       if (this.checkCollision(this.player, enemy)) {
         enemy.markedForDeletion = true
+        this.score += enemy.score
+        this.player.hp -= enemy.damage
       }
       this.player.projectiles.forEach((projectile) => {
         if (this.checkCollision(projectile, enemy)) {
+          enemy.hp -= 1
+          if (enemy.hp <= 0) {
           enemy.markedForDeletion = true
+          this.score += enemy.score
+          }
           projectile.markedForDeletion = true
         }
+        
       })
     })
     this.enemies = this.enemies.filter((enemy) => !enemy.markedForDeletion)
