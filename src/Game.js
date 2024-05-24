@@ -20,6 +20,7 @@ export default class Game {
     this.gravity = 1
     this.debug = false
     this.player = new Player(this)
+    this.hp = this.player.hp
     this.enemies = []
     this.enemyTimer = 0
     this.enemyInterval = 0.000000000001
@@ -37,8 +38,15 @@ export default class Game {
   }
 
   update(deltaTime) {
+    this.countdown = 180 - this.gameTime * 0.001
     if (!this.gameOver) {
       this.gameTime += deltaTime
+    }
+    if (this.hp <= 0) {
+      this.gameOver = true
+    }
+    if (this.countdown <= 0) {
+      this.gameOver = true
     }
     this.background.update()
     // this.background.layers[3].update()
@@ -85,7 +93,7 @@ export default class Game {
       if (this.checkCollision(this.player, enemy)) {
         enemy.markedForDeletion = true
         this.score += enemy.score
-        this.player.hp -= enemy.damage
+        this.hp -= enemy.damage
       }
       this.player.projectiles.forEach((projectile) => {
         if (this.checkCollision(projectile, enemy)) {

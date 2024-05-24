@@ -14,7 +14,7 @@ export default class Cat extends Enemy {
       this.image = image
       this.hp = 20
       this.damage = 3
-      this.score = 300
+      this.score = 1000
     }
 
 

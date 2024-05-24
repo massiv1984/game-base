@@ -29,6 +29,10 @@ if (this.timer > this.interval) {
   if (this.frameX >= this.maxFrame) {
     this.frameX = 0
   }
+
+  if (this.game.gameOver == true) {
+    this.markedForDeletion = true
+  }
     }
     
 }

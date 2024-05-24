@@ -22,9 +22,9 @@ export default class Creature extends Enemy {
   
       // flip sprite direction
       this.flip = false
-      this.hp = 2
+      this.hp = 3
       this.damage = 1
-      this.score = 50
+      this.score = 100
     }
 
 
