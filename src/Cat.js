@@ -1,3 +1,4 @@
+import catImage from './images/bigcat.png'
 import Enemy from './Enemy'
 
 export default class Cat extends Enemy {
@@ -10,9 +11,9 @@ export default class Cat extends Enemy {
       this.speedX = Math.random() * -0.5 -0.5
       this.lives = 2
       const image = new Image()
-      image.src = "src/images/bigcat.png"
+      image.src = catImage
       this.image = image
-      this.hp = 300
+      this.hp = 250
       this.damage = 3
       this.score = 2000
     }

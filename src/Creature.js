@@ -1,3 +1,4 @@
+import creatureImage from './images/katter.png'
 import Enemy from './Enemy'
 
 export default class Creature extends Enemy {
@@ -11,7 +12,7 @@ export default class Creature extends Enemy {
       this.speedY = Math.random() * 2 - Math.random() * 2
       this.lives = 2
       const image = new Image()
-      image.src = "src/images/katter.png"
+      image.src = creatureImage
       this.image = image
       this.frameX = 0
       this.frameY = 0

@@ -1,3 +1,4 @@
+import playerImage from './images/karaktaren.png'
 import Projectile from './Projectile.js'
 
 export default class Player {
@@ -17,7 +18,7 @@ export default class Player {
     this.hp = 3
 
     const image = new Image()
-    image.src = "src/images/karaktaren.png"
+    image.src = playerImage
     this.image = image
   }
   update(deltaTime) {
