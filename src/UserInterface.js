@@ -10,9 +10,9 @@ export default class UserInterface {
     draw(context) {
         context.save()
         context.fillStyle = this.color
-        context.shadowOffsetX = 2
-        context.shadowOffsetY = 2
-        context.shadowColor = 'black'
+        //context.shadowOffsetX = 2
+        //context.shadowOffsetY = 2
+        //context.shadowColor = 'black'
         context.textAlign = 'left'
         context.font = `${this.fontSize}px ${this.fontFamily}`
         context.fillText(
