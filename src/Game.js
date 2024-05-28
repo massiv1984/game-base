@@ -5,6 +5,7 @@ import Player from './Player.js'
 import InputHandler from './InputHandler.js'
 import UserInterface from './UserInterface.js'
 import Background from './Background.js'
+import Highscore from './Highscore.js'
 // import Platform from './Platform.js'
 export default class Game {
   constructor(width, height) {
@@ -28,6 +29,7 @@ export default class Game {
     this.enemyInterval2 = 4200
     this.enemyTimer3 = 0
     this.enemyInterval3 = 42000
+    this.hasname = false
     // this.ground = this.height - 100
 //    this.platforms = [
 //      new Platform(this, 0, this.ground, this.width, 100),
@@ -36,6 +38,9 @@ export default class Game {
 //    ]
 // yo
     this.speed = 1
+    this.highscore = new Highscore(this)
+    this.highscore.getScore()
+    this.name
   }
 
   update(deltaTime) {

@@ -15,7 +15,7 @@ export default class Player {
     this.grounded = false
     this.projectiles = []
     this.frameX = 0
-    this.hp = 3
+    this.hp = 1
 
     const image = new Image()
     image.src = playerImage

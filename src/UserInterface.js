@@ -1,3 +1,5 @@
+import Highscore from "./Highscore"
+
 export default class UserInterface {
     constructor(game) {
       this.game = game
@@ -36,12 +38,30 @@ export default class UserInterface {
               this.game.width / 2,
               this.game.height / 2 - 20
             )
-            context.fillText(
-              `Final score: ${(this.game.score)}`,
-              this.game.width / 2,
-              this.game.height / 2 + 30
-            )
-        }
+            if (this.game.gameOver && this.game.hasname == false){
+              let name = prompt ("ENTER YOUR NAME UP TO 3 CHARACTERS")
+              console.log(name)
+              this.game.name = name
+              if (this.game.name !== null && this.game.name !== undefined){
+                console.log("namn ", this.name)
+                this.game.highscore.postScore(this.game.score)
+              }
+              
+            
+            if (this.game.name !== null) {
+              alert(`YOUR SCORE: ${this.game.score}
+
+              HIGHSCORE: ${this.game.highscore.highscore} by ${this.game.highscore.name.toUpperCase()}`)
+                this.game.hasname = true
+            }
+          
+          }
+            // context.fillText(
+            //  `Final score: ${(this.game.score)}`,
+            //   this.game.width / 2,
+            //   this.game.height / 2 + 30
+            // )
+
          // debug
         if (this.game.debug) {
             context.font = `15px Arial`
@@ -67,4 +87,6 @@ export default class UserInterface {
         } 
         context.restore()
     }
+}
+
 }
