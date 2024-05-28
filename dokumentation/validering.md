@@ -2,11 +2,11 @@ Spelet har testats i browser-tillägget för WAVE. Inga error dök upp, men en a
 
 Sidan har också kollats i validator.nu, vilket inte gav några fel.
 
-Sidan är inte mobilanpassad men det är ett spel vilket gör det för krångligt och svårt att mobilanpassa.
+Sidan är inte mobilanpassad men det är ett spel vilket gör det för onödigt krångligt och svårt att mobilanpassa.
 
-Det finns kanske säkerhetsrisker som jag är omedveten om, men jag har fixat så att man inte kan ha för långa namn eller tomma namn, och att scores som är för små inte läggs till i databasen vilket borde göra att den inte äversvämmas.
+Det finns kanske säkerhetsrisker som jag är omedveten om, men jag har fixat så att man inte kan ha för långa namn eller tomma namn (kollar så att det är mindre än 4 och större än 1), och att scores under 500 inte läggs till i databasen vilket borde göra att den inte översvämmas. Koden kollar också att tomma värden inte sparas.
 
-Jag använder inget olagligt material, så jag bryter inte mot några lagar :D
+Jag använder inget upphovsrättsskyddat eller annat olagligt material, så jag bryter inte mot några lagar :D
 
 Jag har också sett till att ingen bild har större bildstorlek än som de visas i spelet. Förutom det gjordes såklart bilderna av estetarna, min grafik kommer från Filip Wännman och Finn Kristoffersson från min grupp (bioniska cyklister)
 
@@ -16,7 +16,7 @@ Jag har också sett till att ingen bild har större bildstorlek än som de visas
 
 Jag har en separat planering för själva spelet, vilket finns i planering.md och diskuteras i dokumentation.md. För highscore specifikt fanns det en egen planering i planeringsuppgiften i classroom.
 
-Min planering för high score sa att jag skulle göra en databas där där man sparar high scores och hämtar dem. Detta var också hur det blev, då man skickar sitt namn och score till databasen och sedan hämtas det högsta scoret. Anledningen att jag gjorde high score var för att samtidigt få färdigt mitt spel, vilket jag nu har gjort.
+Min planering för high score sa att jag skulle göra en databas där man sparar high scores och hämtar dem. Detta var också hur det blev, då man skickar sitt namn och score till databasen och sedan hämtas det högsta scoret. Anledningen att jag gjorde high score var för att samtidigt få färdigt mitt spel, vilket jag nu har gjort.
 
 Målet var ett spel där dan kan få poäng och sedan hamna på ett leaderboard. Det blev inte riktigt så här, då du endast hämtar det högsta scoret och inte flera. Jag gjorde på detta viset för att jag tyckte att en leaderboard var onödigt krångligt och high score i sig själv ändå fick fram det jag siktade på.
 
