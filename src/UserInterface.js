@@ -42,7 +42,11 @@ export default class UserInterface {
               let name = prompt ("ENTER YOUR NAME UP TO 3 CHARACTERS")
               console.log(name)
               this.game.name = name
-              if (this.game.name !== null && this.game.name !== undefined){
+              if (this.game.name !== null && this.game.name !== undefined && 
+                typeof(this.game.score) === "number" && 
+                this.game.score > 500 &&
+               this.game.name.length < 4 && 
+                this.game.name.length > 0){
                 console.log("namn ", this.name)
                 this.game.highscore.postScore(this.game.score)
               }
