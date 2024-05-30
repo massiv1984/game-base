@@ -4,7 +4,7 @@ Sidan har också kollats i validator.nu, vilket inte gav några fel.
 
 Sidan är inte mobilanpassad men det är ett spel vilket gör det för onödigt krångligt och svårt att mobilanpassa.
 
-Det finns kanske säkerhetsrisker som jag är omedveten om, men jag har fixat så att man inte kan ha för långa namn eller tomma namn (kollar så att det är mindre än 4 och större än 1), och att scores under 500 inte läggs till i databasen vilket borde göra att den inte översvämmas. Koden kollar också att tomma värden inte sparas.
+Det finns kanske säkerhetsrisker som jag är omedveten om, men jag har fixat så att man inte kan ha för långa namn eller tomma namn (kollar så att det är mindre än 4 och större än 1), och att scores under 500 inte läggs till i databasen vilket borde göra att den inte översvämmas. Koden kollar också att tomma värden inte sparas. I glitch ser den till att score är ett nummer.
 
 Jag använder inget upphovsrättsskyddat eller annat olagligt material, så jag bryter inte mot några lagar :D
 
